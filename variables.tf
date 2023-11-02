@@ -57,21 +57,21 @@ variable "node_type" {
 
 variable "node_pool_size" {
   type        = number
-  default     = 3
+  default     = 4
   description = "Node pool size. Currently hardcoded, perhaps later we use an autoscaler or something."
 
 }
 
 variable "node_ocpu" {
   type        = number
-  default     = 1
+  default     = 2
   description = "CPU unit of a node in the node pool."
 
 }
 
 variable "node_memory" {
   type        = number
-  default     = 4
+  default     = 6
   description = "Node memory in Gb for a node in the node pool."
 }
 

@@ -7,6 +7,9 @@ content: |-
 
   This repository is utilising always free resource of oracle cloud to create an OKE (Oracle Kubernetes Engine) k8s cluster. As OKE basic is of no charge at the moment, but doesn't comes under always free resources, you need to put up a credit card to create the resource. It's best to put an upper budget limit of $10 to avoid any charges.
 
+  At the end, you'll have a kubernetes cluster with 4 nodes of type VM.Standard.A1.Flex (ARM) with each have 2 OCPU and 6 GB of memory, with 50 GB of disk.
+
+
 
   ### Quickstart
   - Create a .env file to source in your terminal. `mv .env.example .env`
