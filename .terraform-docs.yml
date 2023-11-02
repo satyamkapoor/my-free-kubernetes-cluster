@@ -1,0 +1,26 @@
+formatter: "markdown"
+
+# .terraform-docs.yml
+content: |-
+
+  ### My Free Kubernetes Cluster
+
+  This repository is utilising always free resource of oracle cloud to create an OKE (Oracle Kubernetes Engine) k8s cluster. As OKE basic is of no charge at the moment, but doesn't comes under always free resources, you need to put up a credit card to create the resource. It's best to put an upper budget limit of $10 to avoid any charges.
+
+
+  ### Quickstart
+  - Create a .env file to source in your terminal. `mv .env.example .env`
+  - Fill the values in `.env` file
+  - Source the file `source .env`
+  - Initialise terraform and apply. `terraform init && terraform apply`
+  - Execute the command which comes as the output `oci ce cluster create-kubeconfig --cluster-id your-cluster-id --file $HOME/.kube/config --region eu-frankfurt-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT`
+
+    {{ .Header }}
+    {{ .Footer }}
+    {{ .Inputs }}
+    {{ .Modules }}
+    {{ .Outputs }}
+    {{ .Providers }}
+    {{ .Requirements }}
+    {{ .Resources }}
+

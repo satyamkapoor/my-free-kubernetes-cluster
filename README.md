@@ -1,27 +1,18 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_oci"></a> [oci](#requirement\_oci) | 5.16.0 |
+### My Free Kubernetes Cluster
 
-## Providers
+This repository is utilising always free resource of oracle cloud to create an OKE (Oracle Kubernetes Engine) k8s cluster. As OKE basic is of no charge at the moment, but doesn't comes under always free resources, you need to put up a credit card to create the resource. It's best to put an upper budget limit of $10 to avoid any charges.
 
-| Name | Version |
-|------|---------|
-| <a name="provider_oci"></a> [oci](#provider\_oci) | 5.16.0 |
 
-## Modules
+### Quickstart
+- Create a .env file to source in your terminal. `mv .env.example .env`
+- Fill the values in `.env` file
+- Source the file `source .env`
+- Initialise terraform and apply. `terraform init && terraform apply`
+- Execute the command which comes as the output `oci ce cluster create-kubeconfig --cluster-id your-cluster-id --file $HOME/.kube/config --region eu-frankfurt-1 --token-version 2.0.0  --kube-endpoint PUBLIC_ENDPOINT`
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_oke"></a> [oke](#module\_oke) | oracle-terraform-modules/oke/oci | 5.0.0-beta.6 |
 
-## Resources
-
-| Name | Type |
-|------|------|
-| [oci_core_network_security_group_security_rule.allow_all](https://registry.terraform.io/providers/oracle/oci/5.16.0/docs/resources/core_network_security_group_security_rule) | resource |
 
 ## Inputs
 
@@ -41,10 +32,29 @@
 | <a name="input_tenancy_ocid"></a> [tenancy\_ocid](#input\_tenancy\_ocid) | Your tenancy OCID https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#five | `string` | n/a | yes |
 | <a name="input_user_ocid"></a> [user\_ocid](#input\_user\_ocid) | Your user OCID. https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#five | `string` | n/a | yes |
 | <a name="input_worker_compartment_ocid"></a> [worker\_compartment\_ocid](#input\_worker\_compartment\_ocid) | The compartment id to create the resources in. Check compartment ID. | `string` | n/a | yes |
+## Modules
 
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_oke"></a> [oke](#module\_oke) | oracle-terraform-modules/oke/oci | 5.0.0-beta.6 |
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_control_plane_nsg_id"></a> [control\_plane\_nsg\_id](#output\_control\_plane\_nsg\_id) | n/a |
+| <a name="output_cluster_kubeconfig"></a> [cluster\_kubeconfig](#output\_cluster\_kubeconfig) | n/a |
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_oci"></a> [oci](#provider\_oci) | 5.16.0 |
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_oci"></a> [oci](#requirement\_oci) | 5.16.0 |
+## Resources
+
+| Name | Type |
+|------|------|
+| [oci_core_network_security_group_security_rule.allow_all](https://registry.terraform.io/providers/oracle/oci/5.16.0/docs/resources/core_network_security_group_security_rule) | resource |
 <!-- END_TF_DOCS -->

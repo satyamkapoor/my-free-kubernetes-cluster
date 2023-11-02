@@ -1,3 +1,5 @@
-output "control_plane_nsg_id" {
-  value = module.oke.control_plane_nsg_id
+output "cluster_kubeconfig" {
+  value = templatefile("${path.module}/oci_kubeconfig_template.tpl", {
+    cluster_id = module.oke.cluster_id
+  })
 }
