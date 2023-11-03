@@ -4,7 +4,7 @@
 
 This repository is utilising always free resource of oracle cloud to create an OKE (Oracle Kubernetes Engine) k8s cluster. As OKE basic is of no charge at the moment, but doesn't comes under always free resources, you need to put up a credit card to create the resource. It's best to put an upper budget limit of $10 to avoid any charges.
 
-At the end, you'll have a kubernetes cluster with 4 nodes of type VM.Standard.A1.Flex (ARM) with each have 2 OCPU and 6 GB of memory, with 50 GB of disk.
+At the end, you'll have a kubernetes cluster with 3 nodes of type VM.Standard.A1.Flex (ARM) with each have 2 OCPU and 6 GB of memory, with 50 GB of disk.
 
 
 
@@ -28,7 +28,7 @@ At the end, you'll have a kubernetes cluster with 4 nodes of type VM.Standard.A1
 | <a name="input_node_boot_volume_size"></a> [node\_boot\_volume\_size](#input\_node\_boot\_volume\_size) | Node boot volume for each node in the node pool in Gb. | `number` | `50` | no |
 | <a name="input_node_memory"></a> [node\_memory](#input\_node\_memory) | Node memory in Gb for a node in the node pool. | `number` | `6` | no |
 | <a name="input_node_ocpu"></a> [node\_ocpu](#input\_node\_ocpu) | CPU unit of a node in the node pool. | `number` | `2` | no |
-| <a name="input_node_pool_size"></a> [node\_pool\_size](#input\_node\_pool\_size) | Node pool size. Currently hardcoded, perhaps later we use an autoscaler or something. | `number` | `4` | no |
+| <a name="input_node_pool_size"></a> [node\_pool\_size](#input\_node\_pool\_size) | Node pool size. Currently hardcoded, perhaps later we use an autoscaler or something. | `number` | `3` | no |
 | <a name="input_node_type"></a> [node\_type](#input\_node\_type) | K8s cluster node type. VM.Standard.A1.Flex is the one in always free resources with ARM variant | `string` | `"VM.Standard.A1.Flex"` | no |
 | <a name="input_private_key_path"></a> [private\_key\_path](#input\_private\_key\_path) | Path to your private key used to authenticate or oci. Check https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The region to provision the resources in. Mostly the same as the one you selected while creating your account. | `string` | n/a | yes |

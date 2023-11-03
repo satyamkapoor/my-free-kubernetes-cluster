@@ -57,7 +57,7 @@ variable "node_type" {
 
 variable "node_pool_size" {
   type        = number
-  default     = 4
+  default     = 3
   description = "Node pool size. Currently hardcoded, perhaps later we use an autoscaler or something."
 
 }
